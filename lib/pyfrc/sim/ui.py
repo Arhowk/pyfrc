@@ -247,9 +247,15 @@ class SimUI(object):
                 
                 buttons.append((ck, var))
                 
+            #append "invisible" axes for support for xbox controllers
+            vw = ValueWidget(slot, clickable=False, default=0.0)
+            axes.append(vw)
+            vw = ValueWidget(slot, clickable=False, default=0.0)
+            axes.append(vw)
+            
             self.joysticks.append((axes, buttons))
             
-        
+                
         slot.pack(side=tk.LEFT, fill=tk.Y, padx=5)
         
             
